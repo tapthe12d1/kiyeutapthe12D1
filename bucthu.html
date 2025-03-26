@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư Bí Ẩn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0e6f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: "Dancing Script", cursive;
+        }
+
+        .envelope {
+            position: relative;
+            width: 400px;
+            height: 250px;
+            background-color: #d9534f;
+            border-radius: 10px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-color: #d9534f;
+            transform-origin: top;
+            transition: transform 0.5s ease;
+            z-index: 2;
+        }
+
+        .letter {
+            position: absolute;
+            width: 90%;
+            height: 0;
+            background-color: white;
+            border-radius: 5px;
+            top: 50%;
+            left: 5%;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+            text-align: center;
+            padding: 0;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: height 0.5s ease, opacity 0.5s ease, top 0.5s ease;
+            overflow: hidden;
+        }
+
+        .letter p {
+            margin: 15px;
+            font-size: 1rem;
+        }
+
+        /* Khi mở thư */
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+        }
+
+        .envelope.open .letter {
+            height: 200px;
+            top: 20%;
+            opacity: 1;
+            padding: 15px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: #d9534f;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <div class="letter">
+            <p> Gửi đến những năm tháng thanh xuân tươi đẹp của chúng ta.🌸<br>
+                Chuyến tàu thanh xuân đã cập bến, mang theo bao kỷ niệm đẹp đẽ. Những buổi sáng đến trường, giờ ra chơi rộn rã, chiều ôn thi... tất cả sẽ mãi là hành trang quý giá. Dù mỗi người một ngả, mong cậu và các bạn thành công trên con đường của riêng mình.! 12D1 🌟✨</p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="button" onclick="toggleEnvelope()">Mở / Đóng Thư</button>
+        <a href="hoatdong.html" class="button">Quay Lại Hoạt Động
+        </a>
+
+    </div>
+
+    <script>
+        function toggleEnvelope() {
+            document.getElementById('envelope').classList.toggle('open');
+        }
+    </script>
+    
+</body>
+</html>

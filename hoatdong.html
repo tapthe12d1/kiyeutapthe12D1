@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyến Xe Thanh Xuân</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://i.imgur.com/BCliMXw.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* 🚂 Train Container */
+    .train-container {
+      position: relative;
+      height: 400px;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    /* 🚂 Train */
+    .train {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      will-change: transform;
+      animation: moveTrain 50s linear infinite;
+    }
+
+    /* 📷 Train Images */
+    .train img {
+      width: 300px;
+      height: 300px;
+      margin: 0 10px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .train img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🚂 Animation */
+    @keyframes moveTrain {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-100% - 100vw)); }
+    }
+
+    /* 🔧 Track */
+    .track {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95%;
+      height: 12px;
+      background: #5a5a5a;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 🎇 Title */
+    .title {
+      font-size: 4rem;
+      font-family: 'Luckiest Guy', cursive;
+      color: #fff;
+      text-align: center;
+      text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffcc00;
+      margin: 20px 0;
+      animation: glowText 1.5s infinite alternate;
+    }
+
+    @keyframes glowText {
+      0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffaa00; }
+      100% { text-shadow: 0 0 20px #ffbb33, 0 0 30px #ffdd57; }
+    }
+
+    /* ☁️ Buttons */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .letter-button, .back-button {
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      background: #fff;
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      border: 3px solid #fff;
+    }
+
+    .letter-button:hover, .back-button:hover {
+      background: #e0f7fa;
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 🎛️ Controls */
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .control-button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      color: white;
+      box-shadow: 0 4px 10px rgba(255, 118, 136, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .control-button:hover {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(255, 118, 136, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <!-- ✨ Title -->
+  <div class="title">Chuyến Xe Thanh Xuân</div>
+
+  <!-- 🚂 Train -->
+  <div class="train-container">
+    <div class="train" id="train">
+       <img src="https://i.imgur.com/OczT1Pt.png" alt="Ảnh 00">
+      <img src="https://i.imgur.com/0RrT62t.jpeg" alt="Ảnh 1">
+      <img src="https://i.imgur.com/1Hgsnwq.jpeg" alt="Ảnh 2">
+      <img src="https://i.imgur.com/tAgry24.jpeg" alt="Ảnh 3">
+      <img src="https://i.imgur.com/9aZTWmp.jpeg" alt="Ảnh 4">
+      <img src="https://i.imgur.com/8UNPKPI.jpeg" alt="Ảnh 5">
+      <img src="https://i.imgur.com/Zld8qNq.jpeg" alt="Ảnh 6">
+      <img src="https://i.imgur.com/W78ideb.jpeg" alt="Ảnh 7">
+      <img src="https://i.imgur.com/y6UmFXO.jpeg" alt="Ảnh 8">
+      <img src="https://i.imgur.com/uJDtdDF.jpeg" alt="Ảnh 9">
+      <img src="https://i.imgur.com/VhevJ3z.jpeg" alt="Ảnh 10">
+      <img src="https://i.imgur.com/tJnefv5.jpeg" alt="Ảnh 11">
+      <img src="https://i.imgur.com/Ds23qcB.jpeg" alt="Ảnh 12">
+      <img src="https://i.imgur.com/Z6Okjzp.jpeg" alt="Ảnh 13">
+      <img src="https://i.imgur.com/HycXNTm.jpeg" alt="Ảnh 14">
+      <img src="https://i.imgur.com/pSRrMuj.jpeg" alt="Ảnh 15">
+      <img src="https://i.imgur.com/dRDQbjZ.jpeg" alt="Ảnh 16">
+      <img src="https://i.imgur.com/rbRzaZq.jpeg" alt="Ảnh 17">
+      <img src="https://i.imgur.com/iHndTaE.jpeg" alt="Ảnh 18">
+      <img src="https://i.imgur.com/24COwtK.jpeg" alt="Ảnh 19">
+      <img src="https://i.imgur.com/esw8d77.jpeg" alt="Ảnh 20">
+      <img src="https://i.imgur.com/R2lv8Ft.jpeg" alt="Ảnh 21">
+      <img src="https://i.imgur.com/4VcbAhW.jpeg" alt="Ảnh 22">
+      <img src="https://i.imgur.com/9sDPqMO.jpeg" alt="Ảnh 23">
+      <img src="https://i.imgur.com/3kEE8xb.jpeg" alt="Ảnh 24">
+      <img src="https://i.imgur.com/ccK45WD.jpeg" alt="Ảnh 25">
+      <img src="https://i.imgur.com/FPBtFeR.jpeg" alt="Ảnh 26">
+      <img src="https://i.imgur.com/moz73T2.jpeg" alt="Ảnh 27">
+      <img src="https://i.imgur.com/DWtXffC.jpeg" alt="Ảnh 28">
+      <img src="https://i.imgur.com/G1L2gmd.jpeg" alt="Ảnh 29">
+      <img src="https://i.imgur.com/RDhqhXL.jpeg" alt="Ảnh 30">
+    </div>
+    <div class="track"></div>
+  </div>
+
+  <!-- ☁️ Navigation Buttons -->
+  <div class="button-container">
+    <a href="bucthu.html" class="letter-button">Hãy Ấn Vào Đây</a>
+    <a href="index.html" class="back-button">Quay Lại Trang Chủ</a>
+  </div>
+
+  <!-- 🎛️ Controls -->
+  <div class="controls">
+    <button class="control-button" onclick="pauseTrain()">Tạm Dừng</button>
+    <button class="control-button" onclick="resumeTrain()">Tiếp Tục</button>
+    <button class="control-button" onclick="speedUp()">Tua Nhanh</button>
+    <button class="control-button" onclick="slowDown()">Tua Chậm</button>
+  </div>
+
+  <script>
+    const train = document.getElementById('train');
+    let baseDuration = 50; // Đặt lại thời gian thành 50 giây
+    train.style.animationDuration = baseDuration + "s";
+
+    function pauseTrain() {
+      train.style.animationPlayState = 'paused';
+    }
+
+    function resumeTrain() {
+      train.style.animationPlayState = 'running';
+    }
+
+    function speedUp() {
+      if (baseDuration > 20) {
+        baseDuration -= 10;
+        train.style.animationDuration = baseDuration + "s";
+      }
+    }
+
+    function slowDown() {
+      baseDuration += 10;
+      train.style.animationDuration = baseDuration + "s";
+    }
+
+    // Đảm bảo animation bắt đầu đúng cách
+    window.addEventListener('load', () => {
+      train.style.animation = `moveTrain ${baseDuration}s linear infinite`;
+    });
+  </script>
+</body>
+</html>
